@@ -72,7 +72,7 @@ function Playground() {
 
   useEffect(() => {
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color('rgb(f,f,f,0.1)');
+    scene.background = new THREE.Color('#f0f0f0');
     sceneRef.current = scene;
 
     const loader = getLoader();
@@ -87,7 +87,9 @@ function Playground() {
     controlsRef.current = setupControls(cameraRef.current, canvasRef);
     const pmremGenerator = new THREE.PMREMGenerator(rendererRef.current);
 
-    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 1).texture;
+    // scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 1).texture;
+    scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+
 
     const environmentMap = new THREE.CubeTextureLoader().load([
       '/texture/environmentMaps/px.jpg',

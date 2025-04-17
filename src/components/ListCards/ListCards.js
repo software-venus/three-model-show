@@ -6,12 +6,12 @@ import './ListCards.css'
 function ListCards(props) {
     const { selectType } = props;
     return (
-        <> <ul className='cards-list'>
+        <ul className='cards-list'>
             {carColorConfigs.length > 0 &&
                 carColorConfigs[0].colorConfigs.map((item, index) => {
                     return (
-                        <>
-                            <li><div className='list-parts' onClick={() => {
+                        <li key={index}>
+                            <div className='list-parts' onClick={() => {
                                 selectType(index);
                             }}>
                                 <CardComponent
@@ -21,12 +21,10 @@ function ListCards(props) {
                                     pic={item.image}
                                 />
                             </div>
-                            </li>
-                        </>
+                        </li>
                     );
                 })}
         </ul>
-        </>
     )
 }
 

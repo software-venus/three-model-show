@@ -4,7 +4,7 @@ import Playground from './components/Playground/Playground';
 function App() {
   return (
     <div className='App'>
-      <Playground></Playground>
+      <Playground/>
     </div>
   );
 }
